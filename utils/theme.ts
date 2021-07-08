@@ -1,26 +1,53 @@
 export const light = {
-  primary: "",
-  secondary: "",
-  thirdary: "",
-  accent: "",
-  textColor: "",
-  lightTextColor: "",
+  colors: {
+    primary: "",
+    secondary: "",
+    thirdary: "",
+    accent: "",
+    textColor: "",
+    lightTextColor: "",
+  },
+  fonts: ["Poppins", "sans-serif"],
+  fontSizes: {
+    xSmall: ".75",
+    small: "1em",
+    medium: "2em",
+    large: "3em",
+  },
 };
 
 export const dark = {
-  primary: "",
-  secondary: "",
-  thirdary: "",
-  accent: "",
-  textColor: "",
-  lightTextColor: "",
+  colors: {
+    primary: "#acacac",
+    secondary: "",
+    thirdary: "",
+    accent: "",
+    textColor: "",
+    lightTextColor: "",
+  },
+  fonts: ["Poppins", "sans-serif"],
+  fontSizes: {
+    xSmall: ".75",
+    small: "1em",
+    medium: "2em",
+    large: "3em",
+  },
 };
 
 export const midnight = {
-  primary: "",
-  secondary: "",
-  thirdary: "",
-  accent: "",
-  textColor: "",
-  lightTextColor: "",
+  colors: {
+    primary: "",
+    secondary: "",
+    thirdary: "",
+    accent: "",
+    textColor: "",
+    lightTextColor: "",
+  },
+  fonts: ["Poppins", "sans-serif"],
+  fontSizes: {
+    xSmall: ".75",
+    small: "1em",
+    medium: "2em",
+    large: "3em",
+  },
 };
