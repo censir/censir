@@ -1,12 +1,11 @@
 import type { AppProps } from "next/app";
-import { ThemeProvider } from "styled-components";
-import { dark } from "../utils/theme";
+import { Theme } from "../layouts/Theme";
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   return (
-    <ThemeProvider theme={dark}>
+    <Theme>
       <Component {...pageProps} />
-    </ThemeProvider>
+    </Theme>
   );
 }
 export default MyApp;
