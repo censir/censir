@@ -1,4 +1,5 @@
 import Document, { Head, Html, NextScript, Main } from "next/document";
+import { ServerStyleSheet } from "styled-components";
 
 const Page = () => {
   return (
@@ -23,8 +24,6 @@ const Page = () => {
           sizes='16x16'
           href='/img/favicon/favicon-16x16.png'
         />
-        <link rel='manifest' href='/site.webmanifest' />
-        <link rel='mask-icon' href='/safari-pinned-tab.svg' color='#B0BED4' />
         <meta name='msapplication-TileColor' content='#B0BED4' />
         <meta name='theme-color' content='#B0BED4' />
 
@@ -44,6 +43,32 @@ const Page = () => {
 };
 
 export default class extends Document {
+  static async getInitialProps(ctx: any) {
+    const sheet = new ServerStyleSheet(),
+      originalRenderPage = ctx.renderPage;
+
+    try {
+      ctx.renderPage = () =>
+        originalRenderPage({
+          enhanceApp: (App: any) => (props: any) =>
+            sheet.collectStyles(<App {...props} />),
+        });
+
+      const initialProps = await Document.getInitialProps(ctx);
+      return {
+        ...initialProps,
+        styles: (
+          <>
+            {initialProps.styles}
+            {sheet.getStyleElement()}
+          </>
+        ),
+      };
+    } finally {
+      sheet.seal();
+    }
+  }
+
   render(): JSX.Element {
     return <Page />;
   }
