@@ -1,6 +1,6 @@
 export const light = {
   colors: {
-    primary: "",
+    primary: "#acacac",
     secondary: "",
     thirdary: "",
     accent: "",
@@ -36,7 +36,7 @@ export const dark = {
 
 export const midnight = {
   colors: {
-    primary: "",
+    primary: "#acacac",
     secondary: "",
     thirdary: "",
     accent: "",
