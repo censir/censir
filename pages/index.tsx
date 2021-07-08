@@ -5,11 +5,11 @@ export default function Home(): JSX.Element {
   return (
     <div>
       <Logo />
-      <SomeComp>test</SomeComp>
+      <Title>test</Title>
     </div>
   );
 }
 
-const SomeComp = styled.h1`
-  colors: ${(props) => props.theme.colors.primary};
+const Title = styled.h1`
+  color: ${(props) => props.theme.colors.primary};
 `;

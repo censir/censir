@@ -4,7 +4,7 @@ import { createGlobalStyle } from "styled-components";
 
 const Global = createGlobalStyle`
   body {
-    font-family: "Poppins", "sans-serif";
+    font-family: Poppins, sans-serif;
   }
 `;
 
