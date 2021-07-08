@@ -5,6 +5,8 @@ import { createGlobalStyle } from "styled-components";
 const Global = createGlobalStyle`
   body {
     font-family: Poppins, sans-serif;
+    background: ${(props: any) =>
+      props.theme.colors.primary} url(./img/cloud.svg) no-repeat top left;
   }
 `;
 
