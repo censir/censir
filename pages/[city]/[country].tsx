@@ -1,6 +1,5 @@
 import { useRouter } from "next/router";
 import { Logo } from "../../components";
-import { Weather } from "../../types/types";
 import { useGetWeatherByCity } from "../../utils/useGetWeatherByCity";
 
 export default function Country(): JSX.Element {
