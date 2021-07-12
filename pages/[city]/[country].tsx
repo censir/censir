@@ -6,7 +6,8 @@ export default function Country(): JSX.Element {
   const { query } = useRouter();
 
   const { weather, isError, isLoading } = useGetWeatherByCity(
-    query.city as string
+    query.city as string,
+    query.country as string
   );
 
   if (isLoading) console.log("Loading");
