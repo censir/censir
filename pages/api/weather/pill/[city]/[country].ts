@@ -1,5 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
+import { CountryCode } from "openweathermap-ts/dist/types";
 import { checkValidCountry } from "../../../../../utils/checkValidCountry";
+import { Weather } from "../../../../../utils/Weather";
 
 export default async function handler(
   req: NextApiRequest,
@@ -14,10 +16,16 @@ export default async function handler(
       message: "Invalid country code!",
     });
 
-    const currentWeather = 
-
-  res.status(200).json({
-    city,
-    country,
+  const currentWeather = await Weather.getCurrentWeatherByCityName({
+    cityName: city as string,
+    countryCode: country as CountryCode,
   });
+
+  if (Number(currentWeather.cod) === 404)
+    return res.status(404).json({
+      success: false,
+      message: "We couldn't find that city!",
+    });
+
+  res.json(currentWeather);
 }
