@@ -1,5 +1,6 @@
-import useSWR from "swr";
 import { useRouter } from "next/router";
+import { Logo } from "../../components";
+import { Weather } from "../../types/types";
 import { useGetWeatherByCity } from "../../utils/useGetWeatherByCity";
 
 export default function Country(): JSX.Element {
@@ -10,13 +11,18 @@ export default function Country(): JSX.Element {
   );
 
   if (isLoading) console.log("Loading");
-  if (isError) console.log("Error");
-
-  console.log(weather);
 
   return (
     <div>
-      <h1>{query.city}</h1>
+      <Logo />
+      <br />
+      {isError ? (
+        <h1>An error occurred!</h1>
+      ) : !isLoading && weather ? (
+        <span>{weather.city.name}</span>
+      ) : (
+        <span>Loading...</span>
+      )}
     </div>
   );
 }
