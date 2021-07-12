@@ -26,9 +26,10 @@ export default async function handler(
   });
 
   if (Number(currentWeather.cod) === 404)
-    return res
-      .status(404)
-      .json({ success: false, message: "We couldn't find that city!" });
+    return res.status(404).json({
+      success: false,
+      message: "We couldn't find that city!",
+    });
 
   const threeHourWeather = await weatherReq.getThreeHourForecastByCityName({
     cityName: city as string,
