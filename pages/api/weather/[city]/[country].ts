@@ -1,11 +1,8 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
-import { Consts } from "../../../../utils/consts";
-import InitWeather from "openweathermap-ts";
+import { Weather } from "../../../../utils/Weather";
 import { checkValidCountry } from "../../../../utils/checkValidCountry";
 import { CountryCode } from "openweathermap-ts/dist/types";
-
-const weatherReq = new InitWeather({ apiKey: Consts.API_KEY, language: "EN" });
 
 export default async function handler(
   req: NextApiRequest,
@@ -20,7 +17,7 @@ export default async function handler(
       message: "Invalid country code!",
     });
 
-  const currentWeather = await weatherReq.getCurrentWeatherByCityName({
+  const currentWeather = await Weather.getCurrentWeatherByCityName({
     cityName: city as string,
     countryCode: country as CountryCode,
   });
@@ -31,7 +28,7 @@ export default async function handler(
       message: "We couldn't find that city!",
     });
 
-  const threeHourWeather = await weatherReq.getThreeHourForecastByCityName({
+  const threeHourWeather = await Weather.getThreeHourForecastByCityName({
     cityName: city as string,
   });
 
