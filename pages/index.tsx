@@ -1,7 +1,12 @@
 import { Logo, Inputs } from "../components";
 import styled from "styled-components";
 
+// @ts-expect-error Types :(
+import { useIpCoords } from "use-ipcoords";
+
 export default function Home(): JSX.Element {
+  const { latitudeIp, longitudeIp } = useIpCoords();
+  console.log(latitudeIp, longitudeIp);
   return (
     <div>
       <LeftContainer>
