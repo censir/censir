@@ -18,6 +18,7 @@ export default function Home(): JSX.Element {
 const Title = styled.h1`
   color: ${(props) => props.theme.colors.textColor};
   margin-left: 20px;
+  font-weight: 300;
 `;
 
 const LeftContainer = styled.div`
