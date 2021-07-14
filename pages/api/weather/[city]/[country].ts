@@ -42,7 +42,7 @@ export default async function handler(
 
   set(`${city} ${country}`, { ...currentWeather, ...threeHourWeather });
 
-  res.status(200).json({
+  res.json({
     success: true,
     ...currentWeather,
     ...threeHourWeather,

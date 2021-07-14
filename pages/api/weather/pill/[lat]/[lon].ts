@@ -28,6 +28,7 @@ export default async function handler(
     });
 
   set(`${lat} ${lon}`, { ...currentWeather });
+
   res.json({
     success: true,
     ...currentWeather,
