@@ -2542,10 +2542,9 @@ once@^1.3.0:
   dependencies:
     wrappy "1"
 
-openweathermap-ts@^1.2.7:
-  version "1.2.7"
-  resolved "https://registry.yarnpkg.com/openweathermap-ts/-/openweathermap-ts-1.2.7.tgz#d651194ea0f7dfa58111b218b601a3a3e8565b80"
-  integrity sha512-CImjB/oTBfzvG7RmwONEBj2bHTeDr5OQucq6ia5gen+P4+zyAXITynkAk/hMxrASUVVaBa3wxEqnahADR2lxAQ==
+"openweathermap-ts@https://github.com/Looskie/openweathermap-ts":
+  version "1.2.8"
+  resolved "https://github.com/Looskie/openweathermap-ts#0fcd7a5470a1881f13765ff922741cea2e6dbc63"
   dependencies:
     node-fetch "^2.6.0"
 
