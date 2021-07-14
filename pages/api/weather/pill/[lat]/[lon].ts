@@ -1,5 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { Weather } from "@/utils/Weather";
+import { set, get } from "@/utils/redis";
 
 export default async function handler(
   req: NextApiRequest,
@@ -7,6 +8,13 @@ export default async function handler(
 ) {
   const lat = Number(req.query.lat);
   const lon = Number(req.query.lon);
+  const cache = await get(`${lat} ${lon}`);
+
+  if (cache)
+    return res.json({
+      success: true,
+      ...cache,
+    });
 
   const currentWeather = await Weather.getCurrentWeatherByGeoCoordinates(
     lat,
@@ -19,5 +27,9 @@ export default async function handler(
       message: "Bad latitude or longitude!",
     });
 
-  res.json(currentWeather);
+  set(`${lat} ${lon}`, { ...currentWeather });
+  res.json({
+    success: true,
+    ...currentWeather,
+  });
 }
