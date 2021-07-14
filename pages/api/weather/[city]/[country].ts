@@ -14,7 +14,7 @@ export default async function handler(
   const cache = await get(`${city} ${country}`);
 
   if (cache) {
-    return res.status(200).json({
+    return res.json({
       success: true,
       ...cache,
     });
