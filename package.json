@@ -3,12 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "docker compose up -d && next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "ioredis": "^4.27.6",
     "next": "11.0.1",
     "node-fetch": "^2.6.1",
     "openweathermap-ts": "https://github.com/Looskie/openweathermap-ts",
@@ -20,6 +21,7 @@
     "use-ipcoords": "^1.0.11"
   },
   "devDependencies": {
+    "@types/ioredis": "^4.26.5",
     "@types/node-fetch": "^2.5.11",
     "@types/react": "17.0.14",
     "@types/styled-components": "^5.1.11",
