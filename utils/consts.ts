@@ -1,5 +1,6 @@
 export class Consts {
   static API_KEY = process.env.API_KEY ?? "";
+  static REDIS_URI = process.env.REDIS_URI ?? "";
 
   static validCountries = [
     "AF",
