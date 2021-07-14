@@ -13,8 +13,6 @@ export default async function handler(
     lon
   );
 
-  console.log(currentWeather);
-
   if (Number(currentWeather.cod) === 400)
     return res.status(400).json({
       success: false,
