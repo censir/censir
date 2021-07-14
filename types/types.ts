@@ -5,3 +5,8 @@ import {
 
 export type Weather = { success: boolean } & CurrentResponse &
   ThreeHourResponse;
+
+export interface GetCoordsRes {
+  latitude: number | null;
+  longitude: number | null;
+}
