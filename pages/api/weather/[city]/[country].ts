@@ -13,12 +13,11 @@ export default async function handler(
 
   const cache = await get(`${city} ${country}`);
 
-  if (cache) {
+  if (cache)
     return res.json({
       success: true,
       ...cache,
     });
-  }
 
   if (!checkValidCountry(country as string))
     return res.status(400).json({
