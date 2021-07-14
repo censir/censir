@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { Weather } from "../../../../utils/Weather";
-import { checkValidCountry } from "../../../../utils/checkValidCountry";
+import { Weather } from "@/utils/Weather";
+import { checkValidCountry } from "@/utils/checkValidCountry";
 import { CountryCode } from "openweathermap-ts/dist/types";
 
 export default async function handler(
