@@ -6,7 +6,6 @@ export const fetcher = async (url: string) => {
 
     error.info = await res.json();
     error.status = res.status;
-    console.log(error);
     throw error;
   }
 
