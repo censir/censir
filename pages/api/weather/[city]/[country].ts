@@ -20,14 +20,11 @@ export default async function handler(
   const cache = await get(`${city} ${country}`);
 
   if (cache) {
-    console.log("Found cache!");
     return res.status(200).json({
       success: true,
       ...cache,
     });
   }
-
-  console.log("didn't find cache!");
 
   if (!checkValidCountry(country as string))
     return res.status(400).json({
