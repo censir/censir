@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { Weather } from "../../../../../utils/Weather";
+import { Weather } from "@/utils/Weather";
 
 export default async function handler(
   req: NextApiRequest,
