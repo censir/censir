@@ -1,4 +1,4 @@
-import { Logo, Inputs, Pill } from "../components";
+import { Logo, Inputs, Pill } from "@/components/index";
 import styled from "styled-components";
 
 export default function Home(): JSX.Element {
