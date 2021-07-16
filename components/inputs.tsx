@@ -1,23 +1,30 @@
 import styled from "styled-components";
+import { ArrowRightIcon } from "@heroicons/react/solid";
 
 export const Inputs = (): JSX.Element => {
   return (
-    <div>
+    <InputContainer>
       <Input placeholder='Enter city' />
       <Input placeholder='Enter country' />
-      <Button>test</Button>
-    </div>
+      <Button>
+        <ArrowRightIcon />
+      </Button>
+    </InputContainer>
   );
 };
+
+const InputContainer = styled.div`
+  position: relative;
+  max-width: 350px;
+`;
 
 const Input = styled.input`
   display: block;
   margin-left: 20px;
   border-radius: 25px;
   margin-top: 20px;
-  min-width: 340px;
-  max-width: 300px;
-  width: 80%;
+  min-width: 300px;
+  width: 100%;
   padding: 13px 0px;
   font-size: ${(props) => props.theme.fontSizes.small};
   border: none;
@@ -40,5 +47,16 @@ const Input = styled.input`
 `;
 
 const Button = styled.button`
+  width: 45px;
+  height: 45px;
   position: absolute;
+  right: -20px;
+  border-radius: 50%;
+  margin-top: -44px;
+  color: ${(props) => props.theme.colors.textColor};
+  padding: 11px;
+  cursor: pointer;
+  border: none;
+  background: #182430;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
 `;
