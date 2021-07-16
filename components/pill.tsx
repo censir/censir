@@ -15,9 +15,10 @@ export const Pill = (): JSX.Element => {
       ) : !isLoading && weather ? (
         <PillContainer>
           <LeftSide>
-            <MainTemperature>{weather.main.temp}</MainTemperature>
+            <MainTemperature>{weather.main.temp.toFixed(0)}</MainTemperature>
             <MinMaxTemperature>
-              {weather.main.temp_min}/{weather.main.temp_max}
+              {weather.main.temp_min.toFixed(0)}/
+              {weather.main.temp_max.toFixed(0)}
             </MinMaxTemperature>
             <WeatherDescription>
               {weather.weather[0].description}
@@ -41,11 +42,12 @@ export const Pill = (): JSX.Element => {
 const PillContainer = styled.div`
   position: relative;
   display: flex;
-  max-width: 450px;
-  border-radius: 16px;
+  max-width: 395px;
+  border-radius: 18px;
   margin-left: 20px;
   padding: 16px;
   background: ${(props) => props.theme.colors.primary};
+  color: ${(props) => props.theme.colors.textColor};
   box-shadow: 1px -1px 12px rgb(0 0 0 / 37%);
 `;
 
@@ -59,22 +61,30 @@ const RightSide = styled.div`
 `;
 
 const MainTemperature = styled.h1`
+  display: inline;
   padding: 0;
-  margin: 0;
+  font-size: 2.15em;
+  margin: 0 10px 0 0;
+  color: ${(props) => props.theme.colors.lightTextColor};
 `;
 
 const MinMaxTemperature = styled.span`
   padding: 0;
   margin: 0;
+  font-size: 1.15em;
 `;
 
 const WeatherDescription = styled.p`
   padding: 0;
   margin: 0;
+  text-transform: capitalize;
+  font-size: 1.2em;
 `;
 const WeatherLocation = styled.p`
   margin: 0;
   padding: 0;
+  font-size: 1.2em;
+  color: ${(props) => props.theme.colors.lightTextColor};
 `;
 
 const WeatherIcon = styled.img`
