@@ -42,7 +42,7 @@ export const Pill = (): JSX.Element => {
 const PillContainer = styled.div`
   position: relative;
   display: flex;
-  max-width: 395px;
+  max-width: 410px;
   border-radius: 18px;
   margin-left: 20px;
   padding: 16px;
