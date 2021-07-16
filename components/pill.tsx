@@ -94,5 +94,5 @@ const WeatherIcon = styled.img`
 
 const ViewMore = styled.a`
   position: absolute;
-  bottom 16px;
+  bottom 8px;
 `;
