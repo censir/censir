@@ -31,6 +31,7 @@ const LeftContainer = styled.div`
 const InputContainer = styled.div`
   display: flex;
   height: 100%;
+  margin-top: -100px;
   flex-direction: column;
   justify-content: center;
 `;
