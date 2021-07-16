@@ -1,6 +1,7 @@
 import type { AppProps } from "next/app";
 import { Theme } from "../layouts/Theme";
 import { createGlobalStyle } from "styled-components";
+import { SkeletonTheme } from "react-loading-skeleton";
 
 const Global = createGlobalStyle`
   body {
@@ -14,7 +15,9 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   return (
     <Theme>
       <Global />
-      <Component {...pageProps} />
+      <SkeletonTheme color='#0D131A' highlightColor='#202A34'>
+        <Component {...pageProps} />
+      </SkeletonTheme>
     </Theme>
   );
 }

@@ -1,5 +1,6 @@
 import { GetCoords } from "@/utils/getCoords";
 import { useGetPill } from "@/utils/useGetPill";
+import Skeleton from "react-loading-skeleton";
 import styled from "styled-components";
 
 export const Pill = (): JSX.Element => {
@@ -8,23 +9,52 @@ export const Pill = (): JSX.Element => {
 
   if (isLoading) console.log("loading");
 
+  console.log(weather);
+
   return (
     <div>
       {isError ? (
         <h1>An error occurred!</h1>
-      ) : !isLoading && weather ? (
+      ) : (
         <PillContainer>
           <LeftSide>
-            <MainTemperature>{weather.main.temp.toFixed(0)}</MainTemperature>
+            <MainTemperature>
+              {weather ? (
+                weather.main.temp.toFixed(0)
+              ) : (
+                <Skeleton duration={1} width={50} height={35} />
+              )}
+            </MainTemperature>
             <MinMaxTemperature>
-              {weather.main.temp_min.toFixed(0)}/
-              {weather.main.temp_max.toFixed(0)}
+              {weather ? (
+                weather.main.temp_min.toFixed(0) +
+                "/" +
+                weather.main.temp_max.toFixed(0)
+              ) : (
+                <Skeleton duration={1} width={40} height={20} />
+              )}
             </MinMaxTemperature>
             <WeatherDescription>
-              {weather.weather[0].description}
+              {weather ? (
+                weather.weather[0].description
+              ) : (
+                <Skeleton duration={1} width={165} height={22} />
+              )}
             </WeatherDescription>
             <WeatherLocation>
-              {weather.name}, {weather.sys.country}
+              {weather ? (
+                weather.name + ", " + weather.sys.country
+              ) : (
+                <>
+                  <Skeleton duration={1} width={155} height={22} />
+                  <Skeleton
+                    style={{ marginLeft: 10 }}
+                    duration={1}
+                    width={30}
+                    height={22}
+                  />
+                </>
+              )}
             </WeatherLocation>
           </LeftSide>
           <RightSide>
@@ -32,8 +62,6 @@ export const Pill = (): JSX.Element => {
             <ViewMore href='https://looskie.com/'>View more</ViewMore>
           </RightSide>
         </PillContainer>
-      ) : (
-        <PillContainer>Loading...</PillContainer>
       )}
     </div>
   );
