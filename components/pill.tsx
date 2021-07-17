@@ -68,7 +68,9 @@ export const Pill = (): JSX.Element => {
             ) : (
               <Skeleton duration={1} width={120} height={90} />
             )}
-            <Button text='View more' />
+            <ViewMoreLink href='looskie.com'>
+              <Button text='View more' />
+            </ViewMoreLink>
           </RightSide>
         </PillContainer>
       )}
@@ -80,10 +82,10 @@ const PillContainer = styled.div`
   position: relative;
   display: flex;
   max-width: 420px;
-  min-height: 145px;
+  min-height: 150px;
   border-radius: 18px;
   margin-left: 20px;
-  padding: 14px 18px;
+  padding: 13px 18px;
   background: ${(props) => props.theme.colors.primary};
   color: ${(props) => props.theme.colors.textColor};
   box-shadow: ${(props) => props.theme.shadows.normalShadow};
@@ -132,11 +134,11 @@ const WeatherLocation = styled.p`
 `;
 
 const WeatherIcon = styled.img`
-  width: 120px;
-  height: auto;
+  width: auto;
+  height: 90px;
 `;
 
-const ViewMore = styled.a`
+const ViewMoreLink = styled.a`
   position: absolute;
-  bottom 8px;
+  bottom: 16px;
 `;
