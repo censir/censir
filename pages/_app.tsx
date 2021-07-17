@@ -6,6 +6,7 @@ import { SkeletonTheme } from "react-loading-skeleton";
 const Global = createGlobalStyle`
   body {
     font-family: Poppins, sans-serif;
+    font-weight: normal;
     background: ${(props: any) =>
       props.theme.colors.primary} url(./img/cloud.svg) no-repeat top left;
   }
