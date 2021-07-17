@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ArrowRightIcon } from "@heroicons/react/solid";
+import { ArrowRight } from "react-feather";
 
 export const Inputs = (): JSX.Element => {
   return (
@@ -7,7 +7,7 @@ export const Inputs = (): JSX.Element => {
       <Input placeholder='Enter city' />
       <Input placeholder='Enter country' />
       <Button>
-        <ArrowRightIcon />
+        <ArrowRight />
       </Button>
     </InputContainer>
   );
