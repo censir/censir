@@ -1,7 +1,7 @@
 import { GetCoords } from "@/utils/getCoords";
 import { getWeatherIcon } from "@/utils/getWeatherIcon";
 import { useGetPill } from "@/utils/useGetPill";
-import { Button, Seperator } from "@/components/index";
+import { Button, Seperator, DegreeSymbol } from "@/components/index";
 import Skeleton from "react-loading-skeleton";
 import styled from "styled-components";
 
@@ -22,7 +22,10 @@ export const Pill = (): JSX.Element => {
           <LeftSide>
             <MainTemperature>
               {weather ? (
-                weather.main.temp.toFixed(0)
+                <>
+                  {weather.main.temp.toFixed(0)}
+                  <DegreeSymbol celsius={false} size={"23px"} />
+                </>
               ) : (
                 <Skeleton duration={1} width={50} height={35} />
               )}
@@ -31,10 +34,12 @@ export const Pill = (): JSX.Element => {
               {weather ? (
                 <>
                   {weather.main.temp_min.toFixed(0)}
+                  <DegreeSymbol celsius={false} size={"13px"} />
                   <Seperator
                     color={(props: any) => props.theme.colors.secondary}
                   />
                   {weather.main.temp_max.toFixed(0)}
+                  <DegreeSymbol celsius={false} size={"13px"} />
                 </>
               ) : (
                 <Skeleton duration={1} width={40} height={20} />
