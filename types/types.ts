@@ -14,3 +14,8 @@ export interface GetCoordsRes {
 export interface SeperatorProps {
   color: string | any;
 }
+
+export interface DegreeSymbolProps {
+  celsius: boolean;
+  size: string;
+}
