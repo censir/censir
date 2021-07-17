@@ -1,5 +1,7 @@
 import { GetCoords } from "@/utils/getCoords";
+import { getWeatherIcon } from "@/utils/getWeatherIcon";
 import { useGetPill } from "@/utils/useGetPill";
+import { Button } from "@/components/index";
 import Skeleton from "react-loading-skeleton";
 import styled from "styled-components";
 
@@ -58,8 +60,15 @@ export const Pill = (): JSX.Element => {
             </WeatherLocation>
           </LeftSide>
           <RightSide>
-            <WeatherIcon src='/img/logo.svg' draggable={false} />
-            <ViewMore href='https://looskie.com/'>View more</ViewMore>
+            {weather ? (
+              <WeatherIcon
+                src={getWeatherIcon(weather.weather[0].id)}
+                draggable={false}
+              />
+            ) : (
+              <Skeleton duration={1} width={120} height={90} />
+            )}
+            <Button text='View more' />
           </RightSide>
         </PillContainer>
       )}
@@ -70,16 +79,20 @@ export const Pill = (): JSX.Element => {
 const PillContainer = styled.div`
   position: relative;
   display: flex;
-  max-width: 410px;
+  max-width: 420px;
+  min-height: 145px;
   border-radius: 18px;
   margin-left: 20px;
-  padding: 16px;
+  padding: 14px 18px;
   background: ${(props) => props.theme.colors.primary};
   color: ${(props) => props.theme.colors.textColor};
-  box-shadow: 1px -1px 12px rgb(0 0 0 / 37%);
+  box-shadow: ${(props) => props.theme.shadows.normalShadow};
 `;
 
-const LeftSide = styled.div``;
+const LeftSide = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 
 const RightSide = styled.div`
   display: flex;
@@ -89,17 +102,19 @@ const RightSide = styled.div`
 `;
 
 const MainTemperature = styled.h1`
-  display: inline;
   padding: 0;
   font-size: 2.15em;
-  margin: 0 10px 0 0;
-  color: ${(props) => props.theme.colors.lightTextColor};
+  margin: 0;
+  color: ${(props) => props.theme.colors.textColor};
+  font-weight: normal;
 `;
 
 const MinMaxTemperature = styled.span`
   padding: 0;
-  margin: 0;
+  margin: -10px 0 0 0;
   font-size: 1.15em;
+  flex-grow: 1;
+  color: ${(props) => props.theme.colors.textColor};
 `;
 
 const WeatherDescription = styled.p`
@@ -107,12 +122,13 @@ const WeatherDescription = styled.p`
   margin: 0;
   text-transform: capitalize;
   font-size: 1.2em;
+  color: ${(props) => props.theme.colors.textColor};
 `;
 const WeatherLocation = styled.p`
   margin: 0;
   padding: 0;
   font-size: 1.2em;
-  color: ${(props) => props.theme.colors.lightTextColor};
+  color: ${(props) => props.theme.colors.darkTextColor};
 `;
 
 const WeatherIcon = styled.img`
