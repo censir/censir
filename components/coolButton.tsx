@@ -19,17 +19,19 @@ const Arrow = styled(ArrowRight)`
 `;
 
 const StyledButton = styled.button`
-  border-radius: 13px;
+  border-radius: 10px;
   padding: 6px 12px;
   cursor: pointer;
   border: none;
-  font-size: .95em;
+  font-size: 0.95em;
   font-family: "Poppins", sans-serif;
   color: ${(props) => props.theme.colors.darkTextColor};
   background: ${(props) => props.theme.colors.secondary};
   box-shadow: ${(props) => props.theme.shadows.subtleShadow};
+  transition: ${(props) => props.theme.transitions.easeInOut};
 
   &:hover {
+    color: ${(props) => props.theme.colors.textColor};
     box-shadow: ${(props) => props.theme.shadows.normalShadow};
   }
 
@@ -39,9 +41,8 @@ const StyledButton = styled.button`
 `;
 
 const I = styled.span`
-  vertical-align: middle;
   font-style: unset;
-  font-weight: 600;
+  font-weight: 500;
   margin-right: 8px;
   margin-left: 2px;
 `;
