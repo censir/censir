@@ -39,7 +39,7 @@ export const midnight = {
     primary: "#12171D",
     secondary: "#202D3C",
     thirdary: "#222C37",
-    accent: "#BB6384",
+    accent: "#AF4F77",
     textColor: "#CDCDCD",
     lightTextColor: "#EEEFF1",
     darkTextColor: "#898989",
@@ -54,5 +54,8 @@ export const midnight = {
   shadows: {
     subtleShadow: "0px 1px 20px 4px rgba(0, 0, 0, 0.25);",
     normalShadow: "0px 0px 17px 6px rgba(0, 0, 0, 0.25);",
+  },
+  transitions: {
+    easeInOut: "all 100ms ease-in-out",
   },
 };
