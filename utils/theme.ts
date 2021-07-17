@@ -36,12 +36,13 @@ export const dark = {
 
 export const midnight = {
   colors: {
-    primary: "#141D26",
-    secondary: "#243447",
-    thirdary: "#131D28",
+    primary: "#12171D",
+    secondary: "#202D3C",
+    thirdary: "#222C37",
     accent: "#BB6384",
-    textColor: "#B1B6BE",
-    lightTextColor: "#C9CFD9",
+    textColor: "#CDCDCD",
+    lightTextColor: "#EEEFF1",
+    darkTextColor: "#898989",
   },
   fonts: ["Poppins", "sans-serif"],
   fontSizes: {
@@ -49,5 +50,9 @@ export const midnight = {
     small: "1em",
     medium: "2em",
     large: "3em",
+  },
+  shadows: {
+    subtleShadow: "0px 1px 20px 4px rgba(0, 0, 0, 0.25);",
+    normalShadow: "0px 0px 17px 6px rgba(0, 0, 0, 0.25);",
   },
 };
