@@ -7,11 +7,7 @@ import styled from "styled-components";
 
 export const Pill = (): JSX.Element => {
   const { latitude: lat, longitude: lon } = GetCoords();
-  const { weather, isLoading, isError } = useGetPill(lat, lon);
-
-  if (isLoading) console.log("loading");
-
-  console.log(weather);
+  const { weather, isError } = useGetPill(lat, lon);
 
   return (
     <div>
