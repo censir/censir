@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { ArrowRight } from "react-feather";
 
-export const Button = ({ text }: any): JSX.Element => {
+export const Button = ({ text, ...props }: any): JSX.Element => {
   return (
-    <StyledButton>
+    <StyledButton {...props}>
       <I>{text}</I> <Arrow size={22} />
     </StyledButton>
   );
