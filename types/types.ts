@@ -10,3 +10,7 @@ export interface GetCoordsRes {
   latitude: number | null;
   longitude: number | null;
 }
+
+export interface SeperatorProps {
+  color: string | any;
+}
