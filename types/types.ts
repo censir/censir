@@ -3,6 +3,10 @@ import {
   ThreeHourResponse,
 } from "openweathermap-ts/dist/types";
 
+export type ActualCurrentResponse = {
+  main: { feels_like: number };
+} & CurrentResponse;
+
 export type Weather = { success: boolean } & CurrentResponse &
   ThreeHourResponse;
 

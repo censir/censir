@@ -1,6 +1,7 @@
 import useSWR from "swr";
 import { fetcher } from "./fetcher";
 import { CurrentResponse } from "openweathermap-ts/dist/types";
+import { ActualCurrentResponse } from "@/types/types";
 
 export const useGetPill = (lat: number | null, lon: number | null) => {
   const { data, error } = useSWR(
@@ -9,7 +10,7 @@ export const useGetPill = (lat: number | null, lon: number | null) => {
   );
 
   return {
-    weather: data as CurrentResponse,
+    weather: data as ActualCurrentResponse,
     isLoading: !error && !data,
     isError: error,
   };
