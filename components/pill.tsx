@@ -11,74 +11,75 @@ export const Pill = (): JSX.Element => {
 
   return (
     <div>
-      {isError ? (
-        <h1>An error occurred!</h1>
-      ) : (
-        <PillContainer>
-          <LeftSide>
-            <MainTemperature>
-              {weather ? (
-                <>
-                  {weather.main.temp.toFixed(0)}
-                  <DegreeSymbol celsius={false} size={"23px"} />
-                </>
-              ) : (
-                <Skeleton duration={1} width={50} height={35} />
-              )}
-            </MainTemperature>
-            <MinMaxTemperature>
-              {weather ? (
-                <>
-                  {weather.main.temp_min.toFixed(0)}
-                  <DegreeSymbol celsius={false} size={"13px"} />
-                  <Seperator
-                    color={(props: any) => props.theme.colors.secondary}
-                  />
-                  {weather.main.temp_max.toFixed(0)}
-                  <DegreeSymbol celsius={false} size={"13px"} />
-                </>
-              ) : (
-                <Skeleton duration={1} width={40} height={20} />
-              )}
-            </MinMaxTemperature>
-            <WeatherDescription>
-              {weather ? (
-                weather.weather[0].description
-              ) : (
-                <Skeleton duration={1} width={165} height={22} />
-              )}
-            </WeatherDescription>
-            <WeatherLocation>
-              {weather ? (
-                weather.name + ", " + weather.sys.country
-              ) : (
-                <>
-                  <Skeleton duration={1} width={155} height={22} />
-                  <Skeleton
-                    style={{ marginLeft: 10 }}
-                    duration={1}
-                    width={30}
-                    height={22}
-                  />
-                </>
-              )}
-            </WeatherLocation>
-          </LeftSide>
-          <RightSide>
+      {isError ? "test" : null}
+      <PillContainer>
+        <LeftSide>
+          <MainTemperature>
             {weather ? (
-              <WeatherIcon
-                src={getWeatherIcon(weather.weather[0].id)}
-                draggable={false}
-              />
+              <>
+                {weather.main.temp.toFixed(0)}
+                <DegreeSymbol celsius={false} size={"23px"} />
+              </>
             ) : (
-              <Skeleton duration={1} width={120} height={90} />
+              <Skeleton duration={1} width={50} height={35} />
             )}
-            <ViewMoreLink href='looskie.com'>
+          </MainTemperature>
+          <MinMaxTemperature>
+            {weather ? (
+              <>
+                {weather.main.temp_min.toFixed(0)}
+                <DegreeSymbol celsius={false} size={"13px"} />
+                <Seperator
+                  color={(props: any) => props.theme.colors.secondary}
+                />
+                {weather.main.temp_max.toFixed(0)}
+                <DegreeSymbol celsius={false} size={"13px"} />
+              </>
+            ) : (
+              <Skeleton duration={1} width={40} height={20} />
+            )}
+          </MinMaxTemperature>
+          <WeatherDescription>
+            {weather ? (
+              weather.weather[0].description
+            ) : (
+              <Skeleton duration={1} width={165} height={22} />
+            )}
+          </WeatherDescription>
+          <WeatherLocation>
+            {weather ? (
+              weather.name + ", " + weather.sys.country
+            ) : (
+              <>
+                <Skeleton duration={1} width={155} height={22} />
+                <Skeleton
+                  style={{ marginLeft: 10 }}
+                  duration={1}
+                  width={30}
+                  height={22}
+                />
+              </>
+            )}
+          </WeatherLocation>
+        </LeftSide>
+        <RightSide>
+          {weather ? (
+            <WeatherIcon
+              src={getWeatherIcon(weather.weather[0].id)}
+              draggable={false}
+            />
+          ) : (
+            <Skeleton duration={1} width={120} height={90} />
+          )}
+          <ViewMoreLink href='looskie.com'>
+            {weather ? (
               <Button text='View more' />
-            </ViewMoreLink>
-          </RightSide>
-        </PillContainer>
-      )}
+            ) : (
+              <Skeleton width={140} height={35} />
+            )}
+          </ViewMoreLink>
+        </RightSide>
+      </PillContainer>
     </div>
   );
 };
