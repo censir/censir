@@ -12,6 +12,10 @@ export const GetCoords = (): GetCoordsRes => {
         .then((location) => {
           setLatitude(location.latitude);
           setLongitude(location.longitude);
+        })
+        .catch(() => {
+          setLatitude(2345234523452354);
+          setLongitude(2342345523423452345);
         });
     };
     navigator.permissions.query({ name: "geolocation" }).then(({ state }) => {
