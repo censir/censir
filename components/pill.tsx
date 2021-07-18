@@ -11,7 +11,7 @@ export const Pill = (): JSX.Element => {
 
   return (
     <div>
-      {isError ? "test" : null}
+      {isError ? "An error occurred" : null}
       <PillContainer>
         <LeftSide>
           <MainTemperature>
