@@ -2845,7 +2845,7 @@ progress@^2.0.0:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-prop-types@15.7.2, prop-types@^15.7.2:
+prop-types@15.7.2, prop-types@^15.6.1, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -2948,6 +2948,13 @@ react-feather@^2.0.9:
   integrity sha512-yMfCGRkZdXwIs23Zw/zIWCJO3m3tlaUvtHiXlW+3FH7cIT6fiK1iJ7RJWugXq7Fso8ZaQyUm92/GOOHXvkiVUw==
   dependencies:
     prop-types "^15.7.2"
+
+react-flash-message@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/react-flash-message/-/react-flash-message-1.0.7.tgz#3aae30324a81b48910fc4e162e80818662329588"
+  integrity sha512-EwyGkQfEiSAFoQfzGHzVMIkNU3XzgGL6eFiTeWeteDPnE3LfKMARNDGGkwk1ATZ3qBJnOH1IrWJicUzOLE8tIQ==
+  dependencies:
+    prop-types "^15.6.1"
 
 react-is@17.0.2:
   version "17.0.2"
