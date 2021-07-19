@@ -4,6 +4,7 @@ import { useGetPill } from "@/utils/useGetPill";
 import { Button, Seperator, DegreeSymbol } from "@/components/index";
 import Skeleton from "react-loading-skeleton";
 import styled from "styled-components";
+import Link from "next/link";
 
 export const Pill = (): JSX.Element => {
   const { latitude: lat, longitude: lon } = GetCoords();
@@ -71,9 +72,14 @@ export const Pill = (): JSX.Element => {
           ) : (
             <Skeleton duration={1} width={120} height={90} />
           )}
-          <ViewMoreLink href='looskie.com'>
+          <ViewMoreLink>
             {weather ? (
-              <Button text='View more' />
+              <Link
+                passHref={true}
+                href={`/${weather.name}/${weather.sys.country}`}
+              >
+                <Button text='View more' />
+              </Link>
             ) : (
               <Skeleton width={140} height={35} />
             )}
