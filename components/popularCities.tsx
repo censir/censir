@@ -15,11 +15,12 @@ const PopularCitiesContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  max-width: 500px;
+  max-width: 600px;
 `;
 
 const CityContainer = styled.div`
   width: 250px;
   height: 150px;
+  margin: 20px 25px;
   background: ${(props) => props.theme.colors.secondary};
 `;
