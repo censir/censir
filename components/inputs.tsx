@@ -1,12 +1,28 @@
 import styled from "styled-components";
+import Link from "next/link";
 import { Button } from "./coolButton";
+import { useState } from "react";
 
 export const Inputs = (): JSX.Element => {
+  const [city, setCity] = useState<string | null>(null);
+  const [country, setCountry] = useState<string | null>(null);
+
   return (
     <InputContainer>
-      <Input placeholder='Enter city' />
-      <Input placeholder='Enter country' />
-      <GoButton text='Go' />
+      <Input
+        onChange={({ target }) => setCity(target.value)}
+        placeholder='Enter city'
+      />
+      <Input
+        onChange={({ target }) => setCountry(target.value)}
+        placeholder='Enter country'
+      />
+      <Link
+        passHref={true}
+        href={city && country ? `/${city}/${country}` : "/"}
+      >
+        <GoButton text='Go' />
+      </Link>
     </InputContainer>
   );
 };
