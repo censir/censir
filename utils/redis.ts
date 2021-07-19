@@ -3,8 +3,8 @@ import { Consts } from "./consts";
 
 export const redis = new Redis(Consts.REDIS_URI);
 
-export const set = (key: string, value: any) => {
-  redis.set(key, JSON.stringify(value), "ex", 300);
+export const set = (key: string, value: any, expiration = 300) => {
+  redis.set(key, JSON.stringify(value), "ex", expiration);
   return;
 };
 
