@@ -1,9 +1,9 @@
-import { Logo, Inputs, Pill } from "@/components/index";
+import { Logo, Inputs, Pill, PopularCities } from "@/components/index";
 import styled from "styled-components";
 
 export default function Home(): JSX.Element {
   return (
-    <div>
+    <Main>
       <LeftContainer>
         <Logo />
         <InputContainer>
@@ -12,9 +12,18 @@ export default function Home(): JSX.Element {
           <Inputs />
         </InputContainer>
       </LeftContainer>
-    </div>
+      <RightContainer>
+        <PopularCities />
+      </RightContainer>
+    </Main>
   );
 }
+
+const Main = styled.div`
+  max-width: 100vw;
+  max-height: 100vh;
+  display: flex;
+`;
 
 const Title = styled.h1`
   color: ${(props) => props.theme.colors.textColor};
@@ -26,7 +35,10 @@ const LeftContainer = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
+  width: 50vw;
 `;
+
+const RightContainer = styled.div``;
 
 const InputContainer = styled.div`
   display: flex;
