@@ -12,7 +12,7 @@ export default async function handler(
   if (cache)
     return res.json({
       success: true,
-      weather: cache,
+      popularCityWeather: cache,
     });
 
   const weatherData = await fetch(
@@ -29,6 +29,6 @@ export default async function handler(
 
   return res.json({
     success: true,
-    weather: weatherData,
+    popularCityWeather: weatherData,
   });
 }
