@@ -35,6 +35,7 @@ const InputContainer = styled.div`
 const Input = styled.input`
   display: block;
   margin-left: 20px;
+  margin-bottom: 0;
   border-radius: 14px;
   margin-top: 20px;
   min-width: 300px;
@@ -64,5 +65,5 @@ const Input = styled.input`
 const GoButton = styled(Button)`
   position: absolute;
   right: -38px;
-  margin-top: -41px;
+  margin-top: -41.5px;
 `;
