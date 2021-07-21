@@ -18,6 +18,9 @@ export const GetCoords = (): GetCoordsRes => {
           setLongitude(2342345523423452345);
         });
     };
+
+    if (!navigator.permissions) return getLocationViaIp();
+
     navigator.permissions.query({ name: "geolocation" }).then(({ state }) => {
       if (state === "denied") return getLocationViaIp();
 
