@@ -1,14 +1,12 @@
 import {
-  CurrentResponse,
+  CurrentResponse as CurrentResponseInit,
   ThreeHourResponse,
 } from "openweathermap-ts/dist/types";
 
-export type ActualCurrentResponse = {
-  main: { feels_like: number };
-} & CurrentResponse;
-
-export type Weather = { success: boolean } & CurrentResponse &
+export type Weather = { success: boolean } & CurrentResponseInit &
   ThreeHourResponse;
+
+export type CurrentResponse = { success: boolean } & CurrentResponseInit;
 
 export interface GetCoordsRes {
   latitude: number | null;

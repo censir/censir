@@ -1,4 +1,4 @@
-import { SeperatorProps } from "@/types/types";
+import { SeperatorProps } from "@/types/";
 import styled from "styled-components";
 
 export const Seperator = ({ color }: SeperatorProps): JSX.Element => {

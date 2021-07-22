@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { GetCoordsRes } from "@/types/types";
+import { GetCoordsRes } from "@/types/";
 
 export const GetCoords = (): GetCoordsRes => {
   const [latitude, setLatitude] = useState<number | null>(null);

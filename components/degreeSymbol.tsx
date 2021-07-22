@@ -1,4 +1,4 @@
-import { DegreeSymbolProps } from "@/types/types";
+import { DegreeSymbolProps } from "@/types/";
 import styled from "styled-components";
 
 export const DegreeSymbol = ({

@@ -1,6 +1,6 @@
 import useSWR from "swr";
 import { fetcher } from "./fetcher";
-import { ActualCurrentResponse } from "@/types/types";
+import { CurrentResponse } from "../types";
 
 export const useGetPill = (lat: number | null, lon: number | null) => {
   const { data, error } = useSWR(
@@ -9,7 +9,7 @@ export const useGetPill = (lat: number | null, lon: number | null) => {
   );
 
   return {
-    weather: data as ActualCurrentResponse,
+    weather: data as CurrentResponse,
     isLoading: !error && !data,
     isError: error,
   };
